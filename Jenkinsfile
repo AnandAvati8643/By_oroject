@@ -4,7 +4,7 @@ stage('MATLAB Process Advisor') {
     sh 'set'
     String matlabRoot = "C:\\Program Files\\MATLAB\\R2023b"
     withEnv (["MATLAB_ROOT=${matlabRoot}",
-      "PATH=$(env.PATH); ${matlabRoot}\\bin"]) {
+      "PATH=$(env.PATH);${matlabRoot}\\bin"]) {
       def scmVars = checkout scm
       env.GIT COMMIT = scmVars.GIT COMMIT
       echo "Git Commit: ${env.GIT_COMMIT}"
