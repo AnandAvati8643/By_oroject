@@ -2,7 +2,7 @@
 stage('MATLAB Process Advisor') {
   node('RoempertSeiner'){
     sh 'set'
-    String matlabRoot = "C:\Program Files\MATLAB\R2023b"
+    String matlabRoot = "C:\\Program Files\\MATLAB\\R2023b"
     withEnv (["MATLAB_ROOT=${matlabRoot}",
       "PATH=$(env.PATH); ${matlabRoot}\\bin"]) {
       def scmVars = checkout scm
