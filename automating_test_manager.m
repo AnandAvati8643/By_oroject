@@ -1,3 +1,3 @@
-open('switch_test_man.mldatx');
+open('switch_test_case.mldatx');
 sltest.testmanager.run();
 sltest.testmanager.view;
