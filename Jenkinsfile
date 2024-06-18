@@ -6,7 +6,7 @@ pipeline {
     stages {
          stage('First_Step') {
             steps {
-               runMATLABCommand(command: "openProject('Software_factory.prj)")
+               runMATLABCommand(command: "openProject('Software_factory.prj')")
             }       
         }
    }
