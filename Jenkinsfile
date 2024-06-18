@@ -1,13 +1,21 @@
 pipeline {
-   agent any
-   environment {
-       PATH = "C:\\Program Files\\MATLAB\\R2023b\\bin;${PATH}"   // Windows agent 
-   }
+    agent any
+
     stages {
-         stage('MATLAB Process Advisor') {
+        stage('Checkout') {
             steps {
-               runMATLABCommand(command: "openProject('Software_factory.prj'); [buildResult, exitCode] = runprocess(RerunFailedTasks=true, ExitInBatchMode=false);finishprocess")
+                checkout scm
             }
-         }   
-      }
-   }
+        }
+
+        stage('Run Simulink Project') {
+            steps {
+                matlab {
+                    sh '''
+                        matlab -nodisplay -r "cd('C:\Users\40674\Downloads\Software_factory'); loadlibrary('Software_factory.prj'); exit;"
+                    '''
+                }
+            }
+        }
+    }
+}
