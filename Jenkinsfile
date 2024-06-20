@@ -1,17 +1,13 @@
 pipeline {
-    agent any
-
+   agent any
+   environment {
+       PATH = "C:\\Program Files\\MATLAB\\R2023b\\bin;${PATH}"   // Windows agent 
+   }
     stages {
-        stage('Checkout') {
+         stage('First_Step') {
             steps {
-                checkout scm
-            }
+               runMATLABCommand(command:'automating_test_manager')
+            }       
         }
-
-        stage('Run Simulink Project') {
-            steps {
-                runMATLABCommand(command: 'openProject('Software_factory.prj')')
-            }
-        }
-    }
+   }
 }
