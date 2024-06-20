@@ -1,5 +1,5 @@
 open('switch_test_case.mldatx');
-sltest.testmanager.run()
+result = sltest.testmanager.run();
 sltest.testmanager.view;
 sltest.testmanager.load('switch_test_case.mldatx');
 %--------------------------------------------------------------------------
