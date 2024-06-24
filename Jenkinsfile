@@ -6,12 +6,12 @@ pipeline {
     stages {
        stage('Zero_Step') {
             steps {
-               runMATLABCommand(command:'variables_for_jenkins.m')
+               runMATLABCommand(command:'variables_for_jenkins')
             }       
         }
          stage('First_Step') {
             steps {
-               runMATLABCommand(command:'openProject(\'Software_factory.prj\'); automating_test_manager.m')
+               runMATLABCommand(command:'openProject(\'Software_factory.prj\'); automating_test_manager')
             }       
         }
    }
