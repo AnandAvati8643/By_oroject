@@ -6,7 +6,7 @@ pipeline {
     stages {
          stage('First_Step') {
             steps {
-               runMATLABCommand(command:'automating_test_manager')
+               runMATLABCommand(command:'openProject(\'Software_factory.prj\'); automating_test_manager')
             }       
         }
    }
